@@ -8,6 +8,17 @@
   </div>
 </template>
 
+<script>
+import {TimelineMax} from 'gsap';
+export default {
+  mounted(){
+    let App = document.querySelector('#app');
+    let tl = new TimelineMax();
+    tl.fromTo(App, 1 , {y:2000},{y:0});
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -19,7 +30,7 @@
 
 #nav {
   padding: 30px;
-  background: #a6fff8;
+  background: #cbfde6;
 }
 
 #nav a {
