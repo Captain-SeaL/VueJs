@@ -19,6 +19,7 @@
 import { mapActions, mapGetters } from "vuex";
 import PostForm from '../components/PostForm'
 import {TimelineMax} from 'gsap'
+//import * as gsap from 'gsap'
 export default {
   name: "vuex",
   computed: mapGetters(['allPosts', 'postsCount']),
