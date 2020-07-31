@@ -36,7 +36,6 @@ export default {
   },
   components: { PostForm },
   async mounted() {
-    //this.$store.dispatch('fetchPosts')
     this.fetchPosts();
   }
 }
