@@ -23,16 +23,20 @@ export default {
 </script>
 
 <style>
+
 .fade-enter-active, .fade-leave-active {
-  transform: translateX(-2000px);
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   transform: translateX(0px);
-  
 }
-.fade-enter, .fade-leave-active {
+.fade-enter{
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transform: translateX(-3000px);
+}
+.fade-leave-active{
   
-  transform: translateX(2000px);
+  overflow-x:  hidden;
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transform: translateX(3000px);
 }
 
 #app {
