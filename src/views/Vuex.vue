@@ -1,4 +1,5 @@
 <template>
+<transition name="vuex">
   <div class="vuex">
     <img alt="Vue logo" id="vuelogo" src="../assets/logo.png">
     <h1>This is an example of Vuex using.</h1>
@@ -13,6 +14,7 @@
     </div>
     </transition-group>
   </div>
+</transition>
 </template>
 
 <script>
@@ -26,10 +28,10 @@ export default {
   
   methods: {
   ...mapActions(['fetchPosts']),
-  enter(el,done){
+  enter(el){
         console.log("12");
         let tl = new TimelineMax();
-        tl.fromTo(el,2,{x:-2000},{x:0},{complete: done});
+        tl.fromTo(el,1.75,{x:-2000},{x:0});
         
         
     }

@@ -3,9 +3,10 @@
     
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/Vuex">Vuex</router-link>
+      <router-link to="/Vuex">Vuex</router-link> |
+      <router-link to="/Anime">Anime</router-link>
     </div>
-    <transition v-on:enter="enter" v-bind:css="false" appear>
+    <transition name="fade" mode="out-in">
     <router-view></router-view>
     </transition>
     
@@ -14,20 +15,26 @@
 </template>
 
 <script>
-import {TimelineMax, /*TweenMax*/} from 'gsap';
+
 
 export default {
-  methods:{
-    enter(){
-        let tl = new TimelineMax();
-        tl.fromTo(document.querySelector("#app"),1,{x:-2000},{x:0});
-        tl.to(document.querySelector("#vuelogo"), 2 , {rotationY:180,repeat:-1});
-    }
-  }
+  
 }
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transform: translateX(-2000px);
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transform: translateX(0px);
+  
+}
+.fade-enter, .fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  
+  transform: translateX(2000px);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,4 +56,6 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
 </style>
